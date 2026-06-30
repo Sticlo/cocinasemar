@@ -1,0 +1,119 @@
+<div class="header-shell">
+  <div
+    class="scroll-progress"
+    aria-hidden="true"
+    [style.transform]="'scaleX(' + scrollProgress() + ')'"
+  ></div>
+  <header
+    class="header"
+    [class.scrolled]="scrolled()"
+    [class.menu-open]="menuAbierto()"
+  >
+    <div class="header-accent" aria-hidden="true"></div>
+
+    <div class="container header-inner">
+      <a href="#inicio" class="header-brand" (click)="cerrarMenu()">
+        <span class="logo">
+          <img
+            [src]="empresa.logo"
+            [alt]="empresa.nombre"
+            class="logo-img logo-img--header"
+            width="180"
+            height="64"
+          />
+        </span>
+        <span class="header-brand__text">
+          <span class="header-brand__line">Cocinas integrales</span>
+          <span class="header-brand__line header-brand__line--accent">{{ empresa.nombreCorto }}</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="#servicios" class="nav-link" (click)="cerrarMenu()">Servicios</a>
+        <a href="#beneficios" class="nav-link" (click)="cerrarMenu()">Beneficios</a>
+        <a href="#galeria" class="nav-link" (click)="cerrarMenu()">Galería</a>
+        <a href="#nosotros" class="nav-link" (click)="cerrarMenu()">Nosotros</a>
+        <a href="#contacto" class="nav-link" (click)="cerrarMenu()">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          type="button"
+          class="theme-toggle"
+          (click)="theme.toggle()"
+          [attr.aria-label]="theme.darkMode() ? 'Activar modo claro' : 'Activar modo oscuro'"
+          [attr.aria-pressed]="theme.darkMode()"
+        >
+          <span class="theme-icon" aria-hidden="true">{{ theme.darkMode() ? '☀️' : '🌙' }}</span>
+        </button>
+
+        <a [href]="'tel:' + empresa.telefonoEnlace" class="header-phone">
+          <span class="phone-label">Llámanos</span>
+          <span class="phone-number">{{ empresa.telefono }}</span>
+        </a>
+        <a href="#contacto" class="header-cta" (click)="cerrarMenu()">
+          Cotizar proyecto
+        </a>
+      </div>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuAbierto()"
+        [attr.aria-label]="menuAbierto() ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'"
+      >
+        <span class="menu-label">Menú</span>
+        <span class="menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <div
+    class="mobile-panel"
+    [class.is-open]="menuAbierto()"
+    [attr.aria-hidden]="!menuAbierto()"
+  >
+    <div class="mobile-panel__top container">
+      <a href="#inicio" class="logo" (click)="cerrarMenu()">
+        <img
+          [src]="empresa.logo"
+          [alt]="empresa.nombre"
+          class="logo-img logo-img--header"
+          width="160"
+          height="56"
+        />
+      </a>
+      <button type="button" class="mobile-close" (click)="cerrarMenu()" aria-label="Cerrar menú">
+        Cerrar
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    <div class="mobile-panel__body container">
+      <p class="mobile-panel__label">Navegación</p>
+      <nav class="mobile-nav" aria-label="Menú móvil">
+        <a href="#servicios" (click)="cerrarMenu()">Servicios</a>
+        <a href="#beneficios" (click)="cerrarMenu()">Beneficios</a>
+        <a href="#galeria" (click)="cerrarMenu()">Galería</a>
+        <a href="#nosotros" (click)="cerrarMenu()">Nosotros</a>
+        <a href="#contacto" (click)="cerrarMenu()">Contacto</a>
+      </nav>
+    </div>
+
+    <div class="mobile-panel__footer container">
+      <a href="#contacto" class="mobile-cta" (click)="cerrarMenu()">Cotizar proyecto</a>
+      <div class="mobile-panel__meta">
+        <button type="button" class="mobile-theme" (click)="theme.toggle()">
+          {{ theme.darkMode() ? '☀️ Modo claro' : '🌙 Modo oscuro' }}
+        </button>
+        <a [href]="'tel:' + empresa.telefonoEnlace" class="mobile-phone" (click)="cerrarMenu()">
+          {{ empresa.telefono }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

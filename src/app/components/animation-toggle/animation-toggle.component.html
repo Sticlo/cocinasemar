@@ -1,0 +1,29 @@
+<button
+  type="button"
+  class="animation-toggle"
+  (click)="toggle()"
+  [class.animation-toggle--off]="animations.disabled()"
+  [attr.aria-pressed]="animations.disabled()"
+  [attr.aria-label]="animations.disabled() ? 'Activar animaciones' : 'Desactivar animaciones para mejor rendimiento'"
+  [title]="animations.disabled() ? 'Activar animaciones' : 'Desactivar animaciones (modo rápido)'"
+>
+  <span class="animation-toggle__icon" aria-hidden="true">
+    @if (animations.disabled()) {
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+        <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke-linejoin="round" />
+        <path d="M4 4l16 16" stroke-linecap="round" />
+      </svg>
+    } @else {
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+        <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke-linejoin="round" />
+      </svg>
+    }
+  </span>
+  <span class="animation-toggle__label">
+    @if (animations.disabled()) {
+      Animaciones off
+    } @else {
+      Modo rápido
+    }
+  </span>
+</button>

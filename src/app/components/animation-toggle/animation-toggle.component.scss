@@ -1,0 +1,78 @@
+.animation-toggle {
+  position: fixed;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1rem 0.75rem 0.85rem;
+  border: 1px solid var(--emar-border);
+  border-radius: 999px;
+  background: var(--emar-surface);
+  color: var(--emar-text);
+  box-shadow: var(--emar-shadow-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition:
+    transform var(--emar-transition),
+    box-shadow var(--emar-transition),
+    border-color var(--emar-transition),
+    background var(--emar-transition),
+    color var(--emar-transition);
+}
+
+.animation-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--emar-shadow);
+  border-color: rgba(184, 149, 74, 0.35);
+}
+
+.animation-toggle--off {
+  background: var(--emar-bg-alt);
+  border-color: rgba(184, 149, 74, 0.45);
+  color: var(--emar-gold);
+}
+
+.animation-toggle__icon {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.animation-toggle__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 560px) {
+  .animation-toggle {
+    left: max(1rem, env(safe-area-inset-left));
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    padding: 0.85rem;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+  }
+
+  .animation-toggle__label {
+    display: none;
+  }
+
+  .animation-toggle__icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+html.animations-off .animation-toggle {
+  transition: none;
+}
+
+html.animations-off .animation-toggle:hover {
+  transform: none;
+}

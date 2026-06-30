@@ -1,0 +1,78 @@
+<section class="contact page-section page-section--dark" id="contacto">
+  <div class="container">
+    <div class="contact-wrapper">
+      <div class="contact-info" appScrollReveal="spotlight">
+        <span class="section-tag">Contacto</span>
+        <h2 class="section-title">¿Listo para tu nueva cocina?</h2>
+        <p class="section-desc">
+          Escríbenos o llámanos. Te atendemos en {{ empresa.ciudad }}.
+        </p>
+
+        <ul class="contact-details">
+          <li>
+            <span class="detail-label">Teléfono</span>
+            <a [href]="'tel:' + empresa.telefonoEnlace">{{ empresa.telefono }}</a>
+          </li>
+          <li>
+            <span class="detail-label">WhatsApp</span>
+            <a [href]="empresa.whatsappEnlace" target="_blank" rel="noopener noreferrer">
+              Escribir por WhatsApp
+            </a>
+          </li>
+          <li>
+            <span class="detail-label">Facebook</span>
+            <a [href]="empresa.facebook" target="_blank" rel="noopener noreferrer">{{ empresa.facebookNombre }}</a>
+          </li>
+          <li>
+            <span class="detail-label">Instagram</span>
+            <a [href]="empresa.instagram" target="_blank" rel="noopener noreferrer">{{ empresa.instagramNombre }}</a>
+          </li>
+          <li>
+            <span class="detail-label">TikTok</span>
+            <a [href]="empresa.tiktok" target="_blank" rel="noopener noreferrer">{{ empresa.tiktokNombre }}</a>
+          </li>
+          <li>
+            <span class="detail-label">Horario</span>
+            <span>{{ empresa.horarioDetalle }}</span>
+          </li>
+          <li>
+            <span class="detail-label">Ubicación</span>
+            <a [href]="empresa.mapsUrl" target="_blank" rel="noopener noreferrer">
+              {{ empresa.direccionCompleta }}
+            </a>
+          </li>
+          <li>
+            <span class="detail-label">Plus Code</span>
+            <span>{{ empresa.plusCode }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-map" appScrollReveal="swing-right" [scrollRevealDelay]="200">
+        <div class="contact-map__header">
+          <span class="detail-label">Visítanos</span>
+          <p class="contact-map__address">{{ empresa.direccionCompleta }}</p>
+        </div>
+
+        <div class="contact-map__frame">
+          <iframe
+            [src]="mapEmbedUrl"
+            title="Ubicación de {{ empresa.nombre }}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <a
+          class="contact-map__link"
+          [href]="empresa.mapsUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Abrir en Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

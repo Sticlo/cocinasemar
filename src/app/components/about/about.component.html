@@ -1,0 +1,42 @@
+<section class="about page-section page-section--alt" id="nosotros">
+  <div class="container about-grid">
+    <div class="about-image" appScrollReveal="swing-left">
+      <img
+        [src]="imagenAbout"
+        alt="Cocina integral fabricada por Emar"
+        loading="lazy"
+        [appScrollParallax]="0.16"
+      />
+      <div class="about-experience">
+        <strong>{{ empresa.calificacion }}★</strong>
+        <span>{{ empresa.opiniones }} opiniones en Google</span>
+      </div>
+    </div>
+
+    <div class="about-content" appScrollReveal="swing-right" [scrollRevealDelay]="100">
+      <span class="section-tag">Sobre Emar</span>
+      <h2 class="section-title">Pasión por el diseño en {{ empresa.ciudad }}</h2>
+      <p>
+        En <strong>{{ empresa.nombre }}</strong> somos una empresa de diseño y fabricación de cocinas
+        integrales. Atendemos a familias y negocios en
+        <strong>{{ empresa.ciudad }}</strong> con la misma dedicación en cada trabajo.
+      </p>
+      <p>
+        Diseñamos, fabricamos e instalamos cocinas a medida con materiales de primera y acabados
+        impecables. Cada proyecto refleja nuestro compromiso con la calidad y la satisfacción del
+        cliente.
+      </p>
+
+      <ul class="about-list">
+        @for (valor of valores; track valor.titulo; let i = $index) {
+          <li appScrollReveal="snap" [scrollRevealDelay]="180 + i * 130">
+            <strong>{{ valor.titulo }}</strong>
+            <span>{{ valor.texto }}</span>
+          </li>
+        }
+      </ul>
+
+      <a href="#contacto" class="btn btn-primary">Conocer más sobre Emar</a>
+    </div>
+  </div>
+</section>

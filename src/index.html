@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cocinas integrales EMAR | Girardot - Cundinamarca</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Cocinas integrales EMAR en Girardot - Cundinamarca. Cocinas a medida diseñadas, fabricadas e instaladas por expertos. ★ 5.0 en Google. Llama al 333 2308375."
+    />
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo.ico" />
+    <link rel="apple-touch-icon" href="/images/LOGOEMAR.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/geist.css" />
+    <script>
+      (function () {
+        var t = localStorage.getItem('emar-theme');
+        var d = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (d) document.documentElement.classList.add('dark-theme');
+        if (localStorage.getItem('emar-animations') === 'off') {
+          document.documentElement.classList.add('animations-off');
+        }
+        if (
+          window.matchMedia('(max-width: 900px), (hover: none) and (pointer: coarse)').matches &&
+          localStorage.getItem('emar-animations') !== 'off'
+        ) {
+          document.documentElement.classList.add('mobile-perf');
+        }
+
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+
+        function startAtTop() {
+          if (location.hash) {
+            history.replaceState(null, '', location.pathname + location.search);
+          }
+          window.scrollTo(0, 0);
+        }
+
+        var nav = performance.getEntriesByType('navigation')[0];
+        if (nav && nav.type === 'reload') {
+          startAtTop();
+          window.addEventListener('DOMContentLoaded', startAtTop);
+        }
+
+        window.addEventListener('pageshow', function (event) {
+          if (event.persisted) {
+            startAtTop();
+          }
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>

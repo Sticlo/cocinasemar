@@ -1,0 +1,102 @@
+<section class="services page-section page-section--light" id="servicios">
+  <div class="container">
+    <div class="section-header" appScrollReveal="unfold">
+      <span class="section-tag">Nuestros servicios</span>
+      <h2 class="section-title">Todo lo que necesitas para tu cocina ideal</h2>
+      <p class="section-desc">
+        Desde el primer boceto hasta la instalación final, Emar te acompaña en cada paso del proceso.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      @for (servicio of servicios; track servicio.titulo; let i = $index) {
+        <article
+          class="service-card"
+          [appScrollReveal]="i % 2 === 0 ? 'swing-left' : 'swing-right'"
+          [scrollRevealDelay]="i * 120"
+        >
+          <div class="service-icon" aria-hidden="true">
+            @switch (servicio.icon) {
+              @case ('design') {
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="svc-design" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="currentColor" stop-opacity="0.95" />
+                      <stop offset="1" stop-color="currentColor" stop-opacity="0.45" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="6" y="10" width="28" height="28" rx="3" stroke="url(#svc-design)" stroke-width="1.75" />
+                  <path d="M12 34V18l8-6 8 6v16" stroke="url(#svc-design)" stroke-width="1.75" stroke-linejoin="round" />
+                  <path d="M17 34v-8h6v8M20 22h4" stroke="url(#svc-design)" stroke-width="1.75" stroke-linecap="round" />
+                  <path d="M36 8l6 6-14 14H22V28L36 8z" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" />
+                </svg>
+              }
+              @case ('fabrication') {
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="svc-fab" x1="10" y1="6" x2="38" y2="42" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="currentColor" />
+                      <stop offset="1" stop-color="currentColor" stop-opacity="0.4" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M6 36h36" stroke="url(#svc-fab)" stroke-width="1.75" stroke-linecap="round" />
+                  <rect x="8" y="28" width="32" height="8" rx="1.5" stroke="url(#svc-fab)" stroke-width="1.75" />
+                  <path d="M14 28V14l10-8 10 8v14" stroke="url(#svc-fab)" stroke-width="1.75" stroke-linejoin="round" />
+                  <circle cx="24" cy="20" r="4" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.75" />
+                  <path d="M22 20h4M24 18v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              }
+              @case ('install') {
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="svc-install" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="currentColor" />
+                      <stop offset="1" stop-color="currentColor" stop-opacity="0.35" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="8" y="14" width="22" height="26" rx="2" stroke="url(#svc-install)" stroke-width="1.75" />
+                  <path d="M8 22h22" stroke="url(#svc-install)" stroke-width="1.75" />
+                  <circle cx="19" cy="30" r="1.5" fill="currentColor" />
+                  <path d="M34 10l4 4-16 16h-6v-6L34 10z" fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" />
+                  <path d="M33 11l4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                </svg>
+              }
+              @case ('space') {
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="svc-space" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="currentColor" />
+                      <stop offset="1" stop-color="currentColor" stop-opacity="0.35" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="6" y="8" width="16" height="14" rx="2" fill="currentColor" fill-opacity="0.12" stroke="url(#svc-space)" stroke-width="1.75" />
+                  <rect x="26" y="8" width="16" height="10" rx="2" stroke="url(#svc-space)" stroke-width="1.75" />
+                  <rect x="26" y="22" width="16" height="18" rx="2" stroke="url(#svc-space)" stroke-width="1.75" />
+                  <rect x="6" y="26" width="16" height="14" rx="2" stroke="url(#svc-space)" stroke-width="1.75" />
+                  <path d="M14 15h4M14 19h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M4 24h4M40 24h4M24 4v4M24 40v4" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              }
+              @case ('warranty') {
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="svc-warranty" x1="12" y1="6" x2="36" y2="42" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="currentColor" />
+                      <stop offset="1" stop-color="currentColor" stop-opacity="0.4" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M24 6l14 6v11c0 9.5-6.5 15.5-14 18-7.5-2.5-14-8.5-14-18V12l14-6z" fill="currentColor" fill-opacity="0.14" stroke="url(#svc-warranty)" stroke-width="1.75" stroke-linejoin="round" />
+                  <path d="M18 24l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M24 10v4" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              }
+            }
+          </div>
+
+          <h3>{{ servicio.titulo }}</h3>
+          <p>{{ servicio.descripcion }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

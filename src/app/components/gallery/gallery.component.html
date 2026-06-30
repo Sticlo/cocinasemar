@@ -1,0 +1,46 @@
+<section class="gallery page-section page-section--light" id="galeria">
+  <div class="container">
+    <div class="section-header" appScrollReveal="cinema">
+      <span class="section-tag">Portafolio</span>
+      <h2 class="section-title">Proyectos que hablan por nosotros</h2>
+      <p class="section-desc">
+        Cada proyecto Emar es único. Mostramos una selección inicial; puedes ver el portafolio completo.
+      </p>
+    </div>
+
+    <div class="gallery-grid" [class.gallery-grid--expanded]="expandido()">
+      @for (proyecto of proyectosVisibles(); track proyecto.imagen; let i = $index) {
+        <article
+          class="gallery-item"
+          [appScrollReveal]="variantGaleria(i)"
+          [scrollRevealDelay]="i * 110"
+        >
+          <div class="gallery-item__media" [appScrollParallax]="0.18">
+            <img
+              class="gallery-item__image"
+              [src]="proyecto.imagen"
+              [alt]="proyecto.titulo"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <h3>{{ proyecto.titulo }}</h3>
+              <p>{{ proyecto.estilo }}</p>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    @if (restantes > 0) {
+      <div class="gallery-actions" appScrollReveal="snap">
+        <button type="button" class="btn btn-secondary gallery-toggle" (click)="alternarPortafolio()">
+          @if (expandido()) {
+            Ver menos proyectos
+          } @else {
+            Ver todos los proyectos ({{ proyectos.length }})
+          }
+        </button>
+      </div>
+    }
+  </div>
+</section>

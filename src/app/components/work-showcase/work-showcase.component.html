@@ -1,0 +1,34 @@
+<section class="work-showcase page-section page-section--alt" id="nuestro-trabajo">
+  <div class="container">
+    <div class="section-header" appScrollReveal="unfold">
+      <span class="section-tag">Calidad Emar</span>
+      <h2 class="section-title">Cómo se ve nuestro trabajo</h2>
+      <p class="section-desc">
+        Tres ejemplos recientes de cocinas integrales diseñadas, fabricadas e instaladas por nuestro equipo.
+      </p>
+    </div>
+
+    <div class="work-showcase__grid">
+      @for (proyecto of proyectos; track proyecto.imagen; let i = $index) {
+        <article
+          class="work-showcase__item"
+          [appScrollReveal]="variant(i)"
+          [scrollRevealDelay]="i * 120"
+        >
+          <div class="work-showcase__media" [appScrollParallax]="0.14">
+            <img
+              class="work-showcase__image"
+              [src]="proyecto.imagen"
+              [alt]="proyecto.titulo"
+              loading="lazy"
+            />
+            <div class="work-showcase__overlay">
+              <h3>{{ proyecto.titulo }}</h3>
+              <p>{{ proyecto.estilo }}</p>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

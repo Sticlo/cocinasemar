@@ -1,0 +1,138 @@
+.footer {
+  background: var(--emar-footer-bg);
+  color: var(--emar-footer-text);
+  padding: 5rem 0 0;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 149, 74, 0.35), transparent);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand .logo {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.footer-slogan {
+  font-size: 0.72rem !important;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--emar-gold) !important;
+  max-width: 300px;
+  margin-bottom: 0.75rem !important;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+.footer-ubicacion {
+  margin-top: 0.75rem;
+  font-size: 0.82rem !important;
+  opacity: 0.8;
+}
+
+.footer-links h4 {
+  color: var(--emar-contact-text);
+  font-family: var(--emar-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  transition: color var(--emar-transition), transform var(--emar-transition);
+}
+
+@media (hover: hover) {
+  .footer-links a:hover {
+    color: var(--emar-gold);
+    transform: translateX(3px);
+  }
+}
+
+.footer-bottom {
+  padding: 1.75rem 0;
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+.footer-brand.scroll-reveal--visible .logo-img {
+  animation: footer-logo-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.footer-links.scroll-reveal--visible a {
+  animation: footer-link-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.footer-links.scroll-reveal--visible a:nth-child(2) { animation-delay: 0.05s; }
+.footer-links.scroll-reveal--visible a:nth-child(3) { animation-delay: 0.1s; }
+.footer-links.scroll-reveal--visible a:nth-child(4) { animation-delay: 0.15s; }
+.footer-links.scroll-reveal--visible a:nth-child(5) { animation-delay: 0.2s; }
+.footer-links.scroll-reveal--visible a:nth-child(6) { animation-delay: 0.25s; }
+
+@keyframes footer-logo-rise {
+  from {
+    transform: translateY(1.5rem);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes footer-link-in {
+  from {
+    transform: translateX(-0.75rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-brand.scroll-reveal--visible .logo-img,
+  .footer-links.scroll-reveal--visible a {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

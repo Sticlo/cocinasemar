@@ -1,0 +1,40 @@
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand" appScrollReveal="swing-left">
+      <a href="#inicio" class="logo">
+        <img
+          [src]="empresa.logo"
+          [alt]="empresa.nombre"
+          class="logo-img logo-img--footer"
+          width="200"
+          height="72"
+        />
+      </a>
+      <p class="footer-slogan">{{ empresa.slogan }}</p>
+      <p>{{ empresa.descripcion }}</p>
+      <p class="footer-ubicacion">{{ empresa.direccionCompleta }}</p>
+    </div>
+
+    <div class="footer-links" appScrollReveal="drift-up" [scrollRevealDelay]="120">
+      <h4>Navegación</h4>
+      <a href="#servicios">Servicios</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+    <div class="footer-links" appScrollReveal="swing-right" [scrollRevealDelay]="220">
+      <h4>Contacto</h4>
+      <a [href]="'tel:' + empresa.telefonoEnlace">{{ empresa.telefono }}</a>
+      <a [href]="empresa.facebook" target="_blank" rel="noopener noreferrer">{{ empresa.facebookNombre }}</a>
+      <a [href]="empresa.instagram" target="_blank" rel="noopener noreferrer">{{ empresa.instagramNombre }}</a>
+      <a [href]="empresa.tiktok" target="_blank" rel="noopener noreferrer">{{ empresa.tiktokNombre }}</a>
+      <a [href]="empresa.mapsUrl" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom" appScrollReveal="fade-up" [scrollRevealDelay]="300">
+    <p>&copy; {{ anio }} {{ empresa.nombre }}. Todos los derechos reservados.</p>
+  </div>
+</footer>
