@@ -7,6 +7,7 @@
     "dev:ssr": "ng serve --ssr",
     "build": "ng build",
     "build:netlify": "ng build --configuration production",
+    "deploy": "wrangler deploy",
     "build:ssr": "ng build",
     "serve:ssr": "node dist/emar-cocinas/server/server.mjs",
     "serve:ssr:emar-cocinas": "node dist/emar-cocinas/server/server.mjs",
@@ -42,6 +43,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.7.2"
+    "typescript": "~5.7.2",
+    "wrangler": "^4.105.0"
   }
 }
