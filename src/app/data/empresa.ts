@@ -17,6 +17,7 @@ export const EMPRESA = {
   horarioDetalle: 'Lun – Sáb · Cierra a las 5:30 p.m.',
   calificacion: 5.0,
   opiniones: 11,
+  familiasSatisfechas: 200,
   facebook: 'https://www.facebook.com/people/Muebles-EMAR/61572261660335/',
   facebookNombre: 'Muebles EMAR',
   instagram: 'https://www.instagram.com/cocinasemar',
