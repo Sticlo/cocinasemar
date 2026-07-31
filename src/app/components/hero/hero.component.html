@@ -4,18 +4,27 @@
     <div class="hero-text">
       <span class="section-tag hero-enter hero-enter--tag">{{ empresa.eslogan }} · {{ empresa.ciudad }}</span>
       <h1 class="hero-title">
-        <span class="hero-line">Transformamos tu cocina en el</span>
+        <span class="hero-line">Cocinas integrales a medida</span>
         <span class="hero-line hero-line--gold">
           <span class="hero-gold-mask">
-            <em>corazón de tu hogar</em>
+            <em>en el corazón de tu hogar</em>
           </span>
         </span>
       </h1>
       <p class="hero-enter hero-enter--desc">
-        En <strong>{{ empresa.nombreCorto }}</strong> {{ empresa.descripcion }}
+        En <strong>{{ empresa.nombre }}</strong> transformamos el corazón de tu hogar con
+        {{ empresa.descripcion }}
       </p>
       <div class="hero-actions hero-enter hero-enter--actions">
-        <a href="#contacto" class="btn btn-primary">Solicitar cotización</a>
+        <a [href]="'tel:' + empresa.telefonoEnlace" class="btn btn-primary">Llamar ahora</a>
+        <a
+          [href]="empresa.whatsappEnlace"
+          class="btn btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp
+        </a>
         <a href="#galeria" class="btn btn-secondary">Ver proyectos</a>
       </div>
       <div class="hero-trust hero-enter hero-enter--trust" aria-label="Indicadores de confianza">
@@ -63,7 +72,7 @@
               class="hero-image"
               [class.hero-image--active]="indice() === i"
               [src]="slide.imagen"
-              [alt]="slide.titulo"
+              [alt]="'Cocina integral Emar: ' + slide.titulo"
               [loading]="i === 0 ? 'eager' : 'lazy'"
             />
           }

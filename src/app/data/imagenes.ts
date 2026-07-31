@@ -5,17 +5,17 @@ export const IMAGENES = {
   destacados: [
     {
       imagen: '/images/COCINA02.jpeg',
-      titulo: 'Cocina con isla en cascada',
+      titulo: 'Isla en cascada con gabinetes arena',
       estilo: 'Mesón blanco, gabinetes arena y grifería negra',
     },
     {
       imagen: '/images/COCINA06.jpeg',
-      titulo: 'Cocina con isla central',
+      titulo: 'Isla central con bancos esmeralda',
       estilo: 'Piso marmolado y bancos verde esmeralda',
     },
     {
       imagen: '/images/COCINA10.jpeg',
-      titulo: 'Cocina con mesón en cascada',
+      titulo: 'Mesón en cascada y mármol veteado',
       estilo: 'Mármol veteado, madera clara y barra',
     },
   ],
@@ -27,7 +27,7 @@ export const IMAGENES = {
     },
     {
       imagen: '/images/COCINA02.jpeg',
-      titulo: 'Cocina con isla en cascada',
+      titulo: 'Cocina integral con isla en cascada',
       estilo: 'Mesón blanco, gabinetes arena y grifería negra',
     },
     {
@@ -47,7 +47,7 @@ export const IMAGENES = {
     },
     {
       imagen: '/images/COCINA06.jpeg',
-      titulo: 'Cocina con isla central',
+      titulo: 'Cocina integral con isla central',
       estilo: 'Piso marmolado y bancos verde esmeralda',
     },
     {
@@ -62,12 +62,12 @@ export const IMAGENES = {
     },
     {
       imagen: '/images/COCINA10.jpeg',
-      titulo: 'Cocina con mesón en cascada',
+      titulo: 'Cocina integral con mesón en cascada',
       estilo: 'Mármol veteado, madera clara y barra',
     },
     {
       imagen: '/images/COCINA11.jpeg',
-      titulo: 'Cocina integral moderna',
+      titulo: 'Cocina a medida de estilo moderno',
       estilo: 'Diseño funcional con acabados de alta calidad',
     },
   ],

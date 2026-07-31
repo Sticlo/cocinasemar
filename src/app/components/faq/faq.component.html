@@ -1,0 +1,32 @@
+<section class="faq page-section page-section--light" id="preguntas" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-header" appScrollReveal="cinema">
+      <span class="section-tag">Preguntas frecuentes</span>
+      <h2 class="section-title" id="faq-title">Todo lo que debes saber antes de cotizar</h2>
+      <p class="section-desc">
+        Respuestas claras sobre cocinas integrales a medida en Girardot. Si necesitas ayuda ahora,
+        llámanos o escríbenos por WhatsApp.
+      </p>
+    </div>
+
+    <div class="faq-list" appScrollReveal="drift-up" [scrollRevealDelay]="100">
+      @for (item of preguntas; track item.pregunta; let i = $index) {
+        <div class="faq-item" [class.faq-item--open]="abierta() === i">
+          <button
+            type="button"
+            class="faq-question"
+            [attr.aria-expanded]="abierta() === i"
+            [attr.aria-controls]="'faq-answer-' + i"
+            (click)="alternar(i)"
+          >
+            <span>{{ item.pregunta }}</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" [id]="'faq-answer-' + i" [hidden]="abierta() !== i">
+            <p>{{ item.respuesta }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

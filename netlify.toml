@@ -5,6 +5,26 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Canonical: https://www.cocinasemar.com — unificar www / sin www y http → https
+[[redirects]]
+  from = "https://cocinasemar.com/*"
+  to = "https://www.cocinasemar.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://cocinasemar.com/*"
+  to = "https://www.cocinasemar.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.cocinasemar.com/*"
+  to = "https://www.cocinasemar.com/:splat"
+  status = 301
+  force = true
+
+# SPA fallback (debe ir al final)
 [[redirects]]
   from = "/*"
   to = "/index.html"

@@ -51,8 +51,14 @@
           <span class="phone-label">Llámanos</span>
           <span class="phone-number">{{ empresa.telefono }}</span>
         </a>
-        <a href="#contacto" class="header-cta" (click)="cerrarMenu()">
-          Cotizar proyecto
+        <a
+          [href]="empresa.whatsappEnlace"
+          class="header-cta"
+          target="_blank"
+          rel="noopener noreferrer"
+          (click)="cerrarMenu()"
+        >
+          Cotizar por WhatsApp
         </a>
       </div>
 
@@ -105,7 +111,15 @@
     </div>
 
     <div class="mobile-panel__footer container">
-      <a href="#contacto" class="mobile-cta" (click)="cerrarMenu()">Cotizar proyecto</a>
+      <a
+        [href]="empresa.whatsappEnlace"
+        class="mobile-cta"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="cerrarMenu()"
+      >
+        Cotizar por WhatsApp
+      </a>
       <div class="mobile-panel__meta">
         <button type="button" class="mobile-theme" (click)="theme.toggle()">
           {{ theme.darkMode() ? '☀️ Modo claro' : '🌙 Modo oscuro' }}
