@@ -1,7 +1,7 @@
 .animation-toggle {
   position: fixed;
   left: 1.5rem;
-  bottom: 1.5rem;
+  bottom: 5.35rem;
   z-index: 90;
   display: inline-flex;
   align-items: center;
@@ -51,7 +51,7 @@
 @media (max-width: 560px) {
   .animation-toggle {
     left: max(1rem, env(safe-area-inset-left));
-    bottom: max(1rem, env(safe-area-inset-bottom));
+    bottom: calc(1rem + 56px + 0.75rem + env(safe-area-inset-bottom));
     padding: 0.85rem;
     border-radius: 50%;
     width: 52px;

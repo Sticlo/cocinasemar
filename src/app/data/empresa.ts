@@ -4,15 +4,16 @@ export const EMPRESA = {
   eslogan: 'Cocinas Integrales',
   categoria: 'Empresa de diseño y fabricación de cocinas integrales',
   descripcion:
-    'Diseñamos, fabricamos e instalamos cocinas integrales a medida en Girardot - Cundinamarca.',
+    'Diseñamos y fabricamos cocinas integrales a medida, únicas, donde el diseño, la calidad y la funcionalidad se encuentran para crear el corazón de tu hogar.',
   telefono: '333 2308375',
   telefonoEnlace: '+573332308375',
   whatsappMensaje: 'Hola, me interesa solicitar una cotización con Emar.',
   whatsappEnlace:
     'https://wa.me/573332308375?text=Hola%2C%20me%20interesa%20solicitar%20una%20cotizaci%C3%B3n%20con%20Emar.',
-  direccion: 'Altos del Peñón, Mañana 37 #casa 8',
+  direccion: 'Manzana 39, Casa 1, Barrio Kennedy',
   ciudad: 'Girardot - Cundinamarca',
-  direccionCompleta: 'Altos del Peñón, Mañana 37 #casa 8, Girardot - Cundinamarca',
+  direccionCompleta:
+    'Manzana 39, Casa 1, Barrio Kennedy, Girardot - Cundinamarca',
   horario: 'Abierto · Cierra a las 5:30 p.m.',
   horarioDetalle: 'Lun – Sáb · Cierra a las 5:30 p.m.',
   calificacion: 5.0,
@@ -25,10 +26,9 @@ export const EMPRESA = {
   tiktok: 'https://www.tiktok.com/@cocinasemar',
   tiktokNombre: '@cocinasemar',
   mapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=Cocinas+integrales+EMAR+Girardot',
+    'https://www.google.com/maps/search/?api=1&query=Manzana+39+Casa+1+Barrio+Kennedy+Girardot+Cundinamarca',
   mapsEmbedUrl:
-    'https://maps.google.com/maps?q=Cocinas+integrales+EMAR+Girardot+Cundinamarca&hl=es&z=17&output=embed',
-  plusCode: '8683+5X Girardot - Cundinamarca',
-  slogan: 'Diseño · Funcionalidad · Calidad',
+    'https://maps.google.com/maps?q=Manzana+39+Casa+1+Barrio+Kennedy+Girardot+Cundinamarca&hl=es&z=17&output=embed',
+  slogan: 'Diseño que se vive.',
   logo: '/images/LOGOEMAR.png',
 } as const;

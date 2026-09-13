@@ -10,6 +10,7 @@ import { ContactComponent } from '../../components/contact/contact.component';
 import { DreamKitchenComponent } from '../../components/dream-kitchen/dream-kitchen.component';
 import { FaqComponent } from '../../components/faq/faq.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { CallFloatComponent } from '../../components/call-float/call-float.component';
 import { WhatsappFloatComponent } from '../../components/whatsapp-float/whatsapp-float.component';
 import { AnimationToggleComponent } from '../../components/animation-toggle/animation-toggle.component';
 
@@ -28,6 +29,7 @@ import { AnimationToggleComponent } from '../../components/animation-toggle/anim
     FaqComponent,
     ContactComponent,
     FooterComponent,
+    CallFloatComponent,
     WhatsappFloatComponent,
     AnimationToggleComponent,
   ],

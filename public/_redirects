@@ -1,0 +1,7 @@
+# Forzar dominio canónico www + https
+https://cocinasemar.com/*  https://www.cocinasemar.com/:splat  301!
+http://cocinasemar.com/*   https://www.cocinasemar.com/:splat  301!
+http://www.cocinasemar.com/*  https://www.cocinasemar.com/:splat  301!
+
+# SPA Angular
+/*    /index.html   200

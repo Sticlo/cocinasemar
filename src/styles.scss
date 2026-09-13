@@ -112,7 +112,8 @@ body.nav-open {
   overflow: hidden;
 }
 
-body.nav-open .whatsapp-float {
+body.nav-open .whatsapp-float,
+body.nav-open .call-float {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -775,7 +776,8 @@ html.animations-off {
     animation: none !important;
   }
 
-  .whatsapp-float__pulse {
+  .whatsapp-float__pulse,
+  .call-float__pulse {
     animation: none;
     opacity: 0;
   }

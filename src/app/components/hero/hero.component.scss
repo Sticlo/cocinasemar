@@ -313,9 +313,40 @@ $hero-ease: cubic-bezier(0.16, 1, 0.3, 1);
 .hero-text p {
   font-size: 1.08rem;
   color: var(--emar-text-muted);
-  margin-bottom: 2.25rem;
+  margin-bottom: 0;
   max-width: 580px;
   line-height: 1.8;
+}
+
+.hero-copy {
+  margin-bottom: 2.25rem;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-brandline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: var(--emar-text);
+  letter-spacing: 0.02em;
+}
+
+.hero-brandline strong {
+  font-size: 0.92rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--emar-text);
+}
+
+.hero-brandline span {
+  font-family: var(--emar-font-display, 'Instrument Serif', Georgia, serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--emar-gold);
 }
 
 .hero-actions {

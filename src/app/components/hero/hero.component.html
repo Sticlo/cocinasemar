@@ -11,10 +11,16 @@
           </span>
         </span>
       </h1>
-      <p class="hero-enter hero-enter--desc">
-        En <strong>{{ empresa.nombre }}</strong> transformamos el corazón de tu hogar con
-        {{ empresa.descripcion }}
-      </p>
+      <div class="hero-enter hero-enter--desc hero-copy">
+        <p>
+          {{ empresa.descripcion }} Un espacio hecho para ti, con cocinas integrales a medida en
+          {{ empresa.ciudad }}.
+        </p>
+        <p class="hero-brandline">
+          <strong>{{ empresa.nombre }}</strong>
+          <span>{{ empresa.slogan }}</span>
+        </p>
+      </div>
       <div class="hero-actions hero-enter hero-enter--actions">
         <a [href]="'tel:' + empresa.telefonoEnlace" class="btn btn-primary">Llamar ahora</a>
         <a
