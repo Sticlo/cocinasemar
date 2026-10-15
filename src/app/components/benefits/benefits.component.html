@@ -37,6 +37,12 @@
             <span class="benefit-card__index" aria-hidden="true">{{
               (i + 1).toString().padStart(2, '0')
             }}</span>
+            <button
+              type="button"
+              class="zoom-trigger"
+              [attr.aria-label]="'Ver en grande: ' + beneficio.titulo"
+              (click)="verFoto(i)"
+            ></button>
           </div>
           <div class="benefit-card__body">
             <h3>{{ beneficio.titulo }}</h3>

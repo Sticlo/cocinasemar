@@ -1,0 +1,52 @@
+<section class="video-showcase page-section page-section--dark" id="video">
+  <div class="container video-showcase__grid">
+    <div class="video-showcase__copy" appScrollReveal="swing-left">
+      <span class="section-tag">Recorrido en video</span>
+      <h2 class="section-title">Mira una cocina integral Emar terminada</h2>
+      <p class="section-desc">
+        Así se ve un proyecto entregado: isla con mesón en granito, gabinetes en madera y vidrio,
+        iluminación LED y cada detalle instalado por nuestro equipo en {{ empresa.ciudad }}.
+      </p>
+      <div class="video-showcase__actions">
+        <a [href]="'tel:' + empresa.telefonoEnlace" class="btn btn-primary">Quiero una así</a>
+        <a
+          [href]="empresa.whatsappEnlace"
+          class="btn btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Cotizar por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="video-showcase__frame" appScrollReveal="swing-right" [scrollRevealDelay]="120">
+      <video
+        #player
+        class="video-showcase__video"
+        [src]="video.src"
+        [poster]="video.poster"
+        [controls]="reproduciendo()"
+        preload="none"
+        playsinline
+        (ended)="reproduciendo.set(false)"
+      >
+        Tu navegador no puede reproducir este video.
+      </video>
+
+      @if (!reproduciendo()) {
+        <button
+          type="button"
+          class="video-showcase__play"
+          aria-label="Reproducir video del proyecto"
+          (click)="reproducir()"
+        >
+          <span class="video-showcase__play-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5z" /></svg>
+          </span>
+          <span class="video-showcase__play-label">Ver recorrido · 0:33</span>
+        </button>
+      }
+    </div>
+  </div>
+</section>

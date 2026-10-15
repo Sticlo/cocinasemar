@@ -26,6 +26,12 @@
               <h3>{{ proyecto.titulo }}</h3>
               <p>{{ proyecto.estilo }}</p>
             </div>
+            <button
+              type="button"
+              class="zoom-trigger"
+              [attr.aria-label]="'Ver en grande: ' + proyecto.titulo"
+              (click)="verFoto(i)"
+            ></button>
           </div>
         </article>
       }

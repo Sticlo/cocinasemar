@@ -23,6 +23,12 @@
               loading="lazy"
               decoding="async"
             />
+            <button
+              type="button"
+              class="zoom-trigger"
+              [attr.aria-label]="'Ver en grande: ' + servicio.titulo"
+              (click)="verFoto(i)"
+            ></button>
           </div>
           <div class="service-card__body">
             <h3>{{ servicio.titulo }}</h3>

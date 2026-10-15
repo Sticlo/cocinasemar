@@ -1,0 +1,82 @@
+@if (lightbox.abierto() && lightbox.actual(); as item) {
+  <div
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="'Foto ampliada: ' + item.titulo"
+    (click)="onBackdropClick($event)"
+  >
+    <div class="lightbox__top">
+      <span class="lightbox__counter">{{ lightbox.indice() + 1 }} / {{ lightbox.total() }}</span>
+      <button
+        #closeButton
+        type="button"
+        class="lightbox__close"
+        aria-label="Cerrar"
+        (click)="lightbox.cerrar()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </div>
+
+    <div
+      class="lightbox__stage"
+      (click)="onBackdropClick($event)"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
+    >
+      @if (lightbox.total() > 1) {
+        <button
+          type="button"
+          class="lightbox__nav lightbox__nav--prev"
+          aria-label="Foto anterior"
+          (click)="lightbox.anterior()"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+        </button>
+      }
+
+      <figure class="lightbox__figure">
+        @for (foto of [item]; track foto.imagen) {
+          <img class="lightbox__image" [src]="foto.imagen" [alt]="foto.titulo" />
+        }
+        <figcaption class="lightbox__caption">
+          <strong>{{ item.titulo }}</strong>
+          @if (item.descripcion) {
+            <span>{{ item.descripcion }}</span>
+          }
+        </figcaption>
+      </figure>
+
+      @if (lightbox.total() > 1) {
+        <button
+          type="button"
+          class="lightbox__nav lightbox__nav--next"
+          aria-label="Foto siguiente"
+          (click)="lightbox.siguiente()"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+        </button>
+      }
+    </div>
+
+    @if (lightbox.total() > 1) {
+      <div class="lightbox__thumbs" #thumbs>
+        @for (foto of lightbox.items(); track foto.imagen + $index; let i = $index) {
+          <button
+            type="button"
+            class="lightbox__thumb"
+            [class.lightbox__thumb--active]="i === lightbox.indice()"
+            [attr.aria-label]="'Ver foto ' + (i + 1) + ': ' + foto.titulo"
+            [attr.aria-current]="i === lightbox.indice() ? 'true' : null"
+            (click)="lightbox.irA(i)"
+          >
+            <img [src]="foto.imagen" alt="" loading="lazy" />
+          </button>
+        }
+      </div>
+    }
+  </div>
+}

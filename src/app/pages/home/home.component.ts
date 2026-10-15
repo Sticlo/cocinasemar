@@ -4,6 +4,7 @@ import { HeroComponent } from '../../components/hero/hero.component';
 import { ServicesComponent } from '../../components/services/services.component';
 import { GalleryComponent } from '../../components/gallery/gallery.component';
 import { WorkShowcaseComponent } from '../../components/work-showcase/work-showcase.component';
+import { VideoShowcaseComponent } from '../../components/video-showcase/video-showcase.component';
 import { AboutComponent } from '../../components/about/about.component';
 import { BenefitsComponent } from '../../components/benefits/benefits.component';
 import { ContactComponent } from '../../components/contact/contact.component';
@@ -11,6 +12,7 @@ import { DreamKitchenComponent } from '../../components/dream-kitchen/dream-kitc
 import { FaqComponent } from '../../components/faq/faq.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CallFloatComponent } from '../../components/call-float/call-float.component';
+import { LightboxComponent } from '../../components/lightbox/lightbox.component';
 import { WhatsappFloatComponent } from '../../components/whatsapp-float/whatsapp-float.component';
 import { AnimationToggleComponent } from '../../components/animation-toggle/animation-toggle.component';
 
@@ -23,6 +25,7 @@ import { AnimationToggleComponent } from '../../components/animation-toggle/anim
     ServicesComponent,
     BenefitsComponent,
     WorkShowcaseComponent,
+    VideoShowcaseComponent,
     GalleryComponent,
     AboutComponent,
     DreamKitchenComponent,
@@ -31,6 +34,7 @@ import { AnimationToggleComponent } from '../../components/animation-toggle/anim
     FooterComponent,
     CallFloatComponent,
     WhatsappFloatComponent,
+    LightboxComponent,
     AnimationToggleComponent,
   ],
   templateUrl: './home.component.html',
